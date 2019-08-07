@@ -1,33 +1,53 @@
-*Psst — looking for an app template? Go here --> [sveltejs/template](https://github.com/sveltejs/template)*
-
----
-
 # component-template
 
-A base for building shareable Svelte components. Clone it with [degit](https://github.com/Rich-Harris/degit):
+## Install
 
-```bash
-npx degit sveltejs/component-template my-new-component
-cd my-new-component
-npm install # or yarn
-```
+    npx degit leafOfTree/component-template my-new-component
+    cd my-new-component
+    npm install # or yarn
 
-Your component's source code lives in `src/index.html`.
+Your source code lives in `src/index.svelte`. Test code lives in `src/test`.
 
-TODO
+## Write components
 
-* [ ] some firm opinions about the best way to test components
-* [ ] update `degit` so that it automates some of the setup work
+### Code & Test
 
+    npm start
 
-## Setting up
+### Build
 
-* Run `npm init` (or `yarn init`)
-* Replace this README with your own
+    npm run build
 
+### Publish
 
-## Consuming components
+- Update `package.json`
 
-Your package.json has a `"svelte"` field pointing to `src/index.html`, which allows Svelte apps to import the source code directly, if they are using a bundler plugin like [rollup-plugin-svelte](https://github.com/rollup/rollup-plugin-svelte) or [svelte-loader](https://github.com/sveltejs/svelte-loader) (where [`resolve.mainFields`](https://webpack.js.org/configuration/resolve/#resolve-mainfields) in your webpack config includes `"svelte"`). **This is recommended.**
+- Update `README.md`
 
-For everyone else, `npm run build` will bundle your component's source code into a plain JavaScript module (`index.mjs`) and a UMD script (`index.js`). This will happen automatically when you publish your component to npm, courtesy of the `prepublishOnly` hook in package.json.
+- Run: `git push` or `npm publish` if everything goes well.
+
+## Comsuming components
+
+### Svelte compoent
+
+The package.json has a `"svelte"` filed pointing to `src/index.svelte`.
+
+This allows Svelte apps to import your component directly, if they are using a bundler plugin like [rollup-plugin-svelte][0](rollup) or [svelte-loader][1](webpack, whose config [resove.mainFields][2] includes `"svelte"`).
+
+### Plain JavaScript module
+
+The package.json also has `"module"` and `"main"` fileds. `npm run build` will bundle your compoennt's source code into a plain JavaScript module(`index.mjs`) and a UMD script(`index.js`). 
+
+> This will happen automatically, conrtesy of `prepublishOnly` hook in package.json.
+
+## Refs
+
+Svelte app template [sveltejs/template][3]
+
+Forked from [sveltejs/component-template][4]
+
+[0]: https://github.com/rollup/rollup-plugin-svelte
+[1]: https://github.com/sveltejs/svelte-loader
+[2]: https://webpack.js.org/configuration/resolve/#resolve-mainfields
+[3]: https://github.com/sveltejs/template
+[4]: https://github.com/sveltejs/component-template
