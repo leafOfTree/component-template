@@ -1,16 +1,18 @@
 # component-template
 
+A base for building sharable Svelte components.
+
 ## Install
 
     npx degit leafOfTree/component-template my-new-component
     cd my-new-component
     npm install # or yarn
 
-Your source code lives in `src/index.svelte`. Test code lives in `src/test`.
+Source code lives in `src/index.svelte`. Preview/test code lives in `src/public/index.svelte`.
 
 ## Write components
 
-### Code & Test
+### Code & preview/test
 
     npm start
 
